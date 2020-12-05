@@ -1,11 +1,12 @@
 #. venv/bin/activate
 
-from flask import Flask, render_template,flash,url_for,redirect,request,session,jsonify
+from flask import Flask, render_template,flash,url_for,redirect,request,session,jsonify,Response
 from forms import *
-import pandas as pd
+import json
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "a-key-that-is-secret"
+
 
 @app.route("/")
 @app.route("/home")
@@ -30,12 +31,9 @@ def name():
 
 @app.route("/allegiances")
 def allegiances():
-    json_ = request.json
-    allegiance = pd.read_csv('allegiance.csv')
-    json_vector = allegiance.transform(json_)
-    query = pd.DataFrame(json_vector)
-    prediction = regr.predict(query)
-    return json.dumps({'allegiances': list({{allegiances}})})    
+    #handle csv file
+    with open("allegiance.json","r") as jsonFile:
+        return Response(jsonFile.read(),mimetype="text/json")
 
 if __name__ == '__main__':
     app.run(debug=True)
