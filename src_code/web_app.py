@@ -31,14 +31,14 @@ def name():
 @app.route("/allegiances",methods=["GET","POST"])
 def allegiances():
 
-    #handle csv file
+    #handle file
     with open("allegiance.json","r") as jsonFile:
         data = json.load(jsonFile)
         return jsonify(data)     #Response(jsonFile.read(),mimetype="text/json")
 
 @app.route("/allegiancedashboard")
 def allegiancedashboard():
-    return render_template("allegiancedashboard.html")
+    return render_template("allegiancedashboard.html",title="Web App - Allegiance Dashboard")
 
 if __name__ == '__main__':
     app.run(debug=True)

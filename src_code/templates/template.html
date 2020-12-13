@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     {% if title %}
         <title>{{ title }}</title>
     {% else %}
-        <title>Web App</title>
+        <title>Web App - Allegiances</title>
     {% endif %}
+
+    <style>
+        body {background-image: url("https://wallpapercave.com/wp/wp2976612.jpg");
+            height: 100%;
+            background-size: cover;
+            font-family: "Courier New", monospace;
+            font-size: 25px;
+            color: #feda4a;}
+        h1 {color:#feda4a;
+            text-align: center;}
+        p {color: #feda4a;
+            text-align: center;} 
+        div {width: 60%;
+            position: relative;
+            border: 5px solid;
+            border-style: double;}
+        .container {background-color: black;
+                /* Center vertically and horizontally */
+                /* position: absolute;
+                top: 50%;
+                left: 50%; */
+                margin: auto;}
+        table, th, td {border: 1px solid #feda4a;
+                        margin: auto;}
+    </style>
 </head>
 {% block content %}{% endblock content %}
 </html>
