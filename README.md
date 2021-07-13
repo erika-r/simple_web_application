@@ -1,7 +1,7 @@
 # web_application
 Simple web application made using flask
 
-This website was created in 4 steps
+This website was created in 4 parts
 - creating a static homepage
 - adding a "/formtest" endpoint which displays a web form asking for the user's name. The form is then submitted using POST and the user is redirected to a new page displaying the user's name using flask templates
 - adding a "/allegiances" endpoint which calls the allegiances.csv file and returns the data in the browser as JSON data
